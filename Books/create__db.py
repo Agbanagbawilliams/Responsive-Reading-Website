@@ -96,6 +96,18 @@ books = [
      "Book that Guide you in Minecraft Creative Mode",
      "https://fliphtml5.com/xzswt/qajw/",
      insert_file_data('previeux16.html')),
+    ("School Bus Trip", "Ellen Philpott", insert_file_data('assets/img/download (15).jpg', True),
+     "Story about Peppa Pig and her friends going on a field trip in the mountains",
+     "https://pubhtml5.com/krqt/hcwz/Peppa_Pig_-_School_Bus_Trip/",
+     insert_file_data('previeux17.html')),
+    ("A Pete for Pete", "James Dean", insert_file_data('assets/img/download (16).jpg', True),
+     "Story about a cat named Pete getting a goldfish",
+     "https://pubhtml5.com/hcsy/xrqg/PETE_THE_CAT_A_Pet_For_Pete/",
+     insert_file_data('previeux18.html')),
+    ("The Good Egg", "Pete Oswald", insert_file_data('assets/img/download (17).jpg', True),
+     "Story about a good and nice egg",
+     "https://fliphtml5.com/eairu/cnld/707429470-The-Good-Egg/",
+     insert_file_data('previeux19.html')),
 ]
 
 # Insert books
