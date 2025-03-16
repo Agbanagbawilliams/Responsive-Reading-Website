@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="/assets/img/bookshelf_3283747.png"
+      type="image/x-icon"
+    />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <title>Harmony E-books</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="" class="nav__logo"><i class="ri-book-2-line"></i>Harmony E-Books</a>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active_link">
+                <i class="ri-home-line"></i>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#about" class="nav__link">
+                <i class="ri-team-line"></i>
+                <span>About Us</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#featured" class="nav__link">
+                <i class="ri-award-line"></i>
+                <span>Featured</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#new" class="nav__link">
+                <i class="ri-book-3-line"></i>
+                <span>Books</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__actions">
+          <!-- Search Button -->
+          <i class="ri-search-line" id="search-button"></i>
+        </div>
+      </nav>
+    </header>
+    <!--==================== SEARCH ====================-->
+    <div class="search" id="search-content">
+    <div class="wrapper">
+      <div class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input type="text" placeholder="Type to search books.." class="">
+        <div class="autocom-box">
+          <!-- here list are inserted from javascript -->
+        </div>
+        <div class="icon"><i class="ri-search-line"></i></div>
+      </div>
+    </div>
+      <i class="ri-close-fill search-clos" id="search-close"></i>
+    </div>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">
+              Browse & <br />
+              Read E-Books
+            </h1>
+            <p class="home__description">
+             Welcome to the Harmony E-books! Here, you’ll find a collection of exciting books, including Dog Man, Charlotte’s Web, The One and Only Ivan, Diary of a Wimpy Kid, The Tale of Peter Rabbit, Harold and the Purple Crayon, Holes, and more!
+            </p>
+            <a href="#new" class="button">Start Reading</a>
+          </div>
+
+          <div class="home__images">
+            <div class="home__swiper swiper">
+              <div class="swiper-wrapper">
+                <article class="home__article swiper-slide">
+                  <img
+                    src="./assets/img/51KYLRbfmGL._SY445_SX342_.jpg"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img
+                    src="./assets/img/1.avif"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img
+                    src="./assets/img/th.jpg"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+                <article class="home__article swiper-slide">
+                  <img
+                    src="./assets/img/download (1).jpg"
+                    alt="image"
+                    class="home__img"
+                  />
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--=================== ABOUT US  ====================-->
+      <section class="about section" id="about">
+        <div class="about__container">
+      <h2 class="section__title">About Us</h2>
+      <p class="about__text">At Harmony Elementary School, we believe that reading opens doors to imagination, creativity, and lifelong learning.<br> Our online library was created to give students easy access to amazing books, anytime and anywhere! Our goal is <br> to make reading fun and accessible for every student at Harmony Elementary School. Whether you love exciting<br>  adventures, funny stories, or learning about new things, our library has something just for you!😄</p>
+        <div class="about__images">
+      <img src="./assets/img/download (6).jpg" alt="image" class="about__img">
+      <img src="./assets/img/download (4).jpg" alt="image" class="about__img-2">
+        </div>
+        </div>
+      </section>
+      <!--==================== FEATURED ====================-->
+      <section class="featured section" id="featured">
+        <h2 class="section__title">Featured</h2>
+
+        <div class="featured__container container">
+          <div class="featured__swiper swiper">
+            <div class="swiper-wrapper">
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/51KYLRbfmGL._SY445_SX342_.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/1 (1).avif"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/download (2).jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/Matilda.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/download (4).jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/download (9).jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/download (7).jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/14838-cover.png"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/th.jpg"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img
+                  src="./assets/img/1.avif"
+                  alt="image"
+                  class="featured__img"
+                />
+
+                <h2 class="featured__title">Featured Book</h2>
+              </article>
+            </div>
+            <div class="swiper-button-prev">
+              <i class="ri-arrow-left-s-line"></i>
+            </div>
+
+            <div class="swiper-button-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--==================== BOOKS ====================-->
+      <section class="new section" id="new">
+        <h2 class="section__title">Books</h2>
+
+        <div class="new__container container">
+          <div class="new__swiper swiper">
+            <div class="swiper-wrapper">
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/pg14838.cover.medium.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+                <div>
+                  <h2 class="new__title">THE TALE OF PETER RABBIT</h2>
+                  <p class="grade__level">Grade 1 - 3</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux2.html?_ijt=ratc1mvpja3vefi3ss282g8lcd&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/51KYLRbfmGL._SY445_SX342_.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                   <h2 class="new__title">Dog Man (1)</h2>
+                  <p class="grade__level">Grade 2-6</p>
+                   <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux3.html?_ijt=39b7guclf84m5ccv3pv2ci3dsl&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+                </div>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/1.avif"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                   <h2 class="new__title">The One and Only Ivan</h2>
+                  <p class="grade__level">Grade 3-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux0.html?_ijt=39b7guclf84m5ccv3pv2ci3dsl&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+                </div>
+              </a>             
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (1).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Diary of A Wimpy Kid The Deep End</h2>
+                  <p class="grade__level">Grade 3-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux1.html?_ijt=ratc1mvpja3vefi3ss282g8lcd&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (2).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Harold & the Purple Crayon</h2>
+                  <p class="grade__level">Grade Pre-K - 3rd</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux4.html?_ijt=ratc1mvpja3vefi3ss282g8lcd&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (4).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Holes</h2>
+                  <p class="grade__level">Grade 5-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux5.html?_ijt=39b7guclf84m5ccv3pv2ci3dsl&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/Matilda.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Matilda</h2>
+                  <p class="grade__level">Grade 3-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux6.html?_ijt=gkn3gdfqvk6j51njiuh3m78vtv&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/th.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Charlotte's Web</h2>
+                  <p class="grade__level">Grade 3-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/responsive-book-website-main/previeux7.html?_ijt=n7ei8jkuj4k1dlbuj2bo7141c2&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (8).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Harry Poter</h2>
+                  <p class="grade__level">Grade 4-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux8.html?_ijt=d4dasn4sfspkftj50i3a84olbk&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (9).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">The Wild  Robot</h2>
+                  <p class="grade__level">Grade 3-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux9.html?_ijt=d4dasn4sfspkftj50i3a84olbk&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="new__swiper swiper">
+            <div class="swiper-wrapper">
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (7).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Captain Underpants</h2>
+                  <p class="grade__level">Grade 3-5</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux10.html?_ijt=d4dasn4sfspkftj50i3a84olbk&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (10).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Stink (1)</h2>
+                  <p class="grade__level">Grade 1-4</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux11.html?_ijt=d4dasn4sfspkftj50i3a84olbk&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Dog Man (2)</h2>
+                  <p class="grade__level">Grade 2-5</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux12.html?_ijt=pgld7dlk949k6k27ga8nfie4df&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (11).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Smile</h2>
+                  <p class="grade__level">Grade 4-6</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux13.html?_ijt=ajfbjhjgoec9ndkhauudjit28l&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (12).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Geronimo Stilton book 16</h2>
+                  <p class="grade__level">Grade 2-4</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux14.html?_ijt=ajfbjhjgoec9ndkhauudjit28l&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (13).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Should I Share My Ice Cream?</h2>
+                  <p class="grade__level">Pre-K - 2nd</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux15.html?_ijt=ajfbjhjgoec9ndkhauudjit28l&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/download (14).jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">Guide to Creative</h2>
+                  <p class="grade__level">Grade 3 - 5</p>
+                  <button class="button" onclick="window.location.href='http://localhost:63342/Online%20Library/previeux16.html?_ijt=ajfbjhjgoec9ndkhauudjit28l&_ij_reload=RELOAD_ON_SAVE';">See Now</button>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./assets/img/book-3.png"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">New Book</h2>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./Books/images/front_cover.jpg"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <div>
+                    <h2 class="new__title">New Book</h2>
+                 </div>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="new__card swiper-slide">
+                <img
+                  src="./Books/14838-cover.png"
+                  alt="image"
+                  class="new__img"
+                />
+
+                <div>
+                  <h2 class="new__title">New Book</h2>
+
+                  <div class="new__stars">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div>
+          <a href="#" class="footer__logo">
+            <i class="ri-book-2-line"></i>Harmony E-Books
+          </a>
+
+          <p class="footer__description">
+            Find and explore the best <br />
+            eBooks from all your <br />
+            favorite writers.
+          </p>
+        </div>
+
+        <div class="footer__data grid">
+          <div>
+            <h3 class="footer__title">About</h3>
+
+            <ul class="footer__links">
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/staff-directory/" class="footer__link">Staff Directory</a>
+              </li>
+
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/wp-content/uploads/sites/14/2023/06/Rules-of-conduct-and-safety-Harmony-2023-2024-1.pdf" class="footer__link">Agenda & Rules of Conduct</a>
+              </li>
+
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/problem/" class="footer__link">Problem at School?</a>
+              </li>
+
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/wp-content/uploads/sites/14/2021/10/Harmony-EdProj-2019.pdf" class="footer__link">Educational Project</a>
+              </li>
+
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/governing-board/" class="footer__link">Governing Board</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">Services</h3>
+
+            <ul class="footer__links">
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/academics/" class="footer__link">Academics</a>
+              </li>
+
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/daycare/" class="footer__link">Daycare</a>
+              </li>
+
+              <li>
+                <a href="https://harmony.nfsb.qc.ca/cafeteria/" class="footer__link">Cafeteria</a>
+              </li>
+
+              <li>
+                <a href="https://www.nfsb.qc.ca/transportation/" class="footer__link">Transportation</a>
+              </li>
+
+              <li>
+                <a href="https://www.nfsb.qc.ca/registration/" class="footer__link">How to Register</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">Contact</h3>
+
+            <ul class="footer__links">
+              <li>
+                <address class="footer__info">
+                280 Av. Brahms<br>
+                Châteauguay, QC J6K 5G1
+                </address>
+              </li>
+
+              <li>
+               <address class="footer__info">
+                  harmony.nfsb.qc.ca <br>
+                  +1450-691-9099
+               </address>
+             </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">Social</h3>
+
+            <div class="footer__social">
+               <a href="https://www.facebook.com/p/Harmony-Elementary-School-100063466301561/" target="_blank" class="footer__social-link">
+                  <i class="ri-facebook-circle-line"></i>
+
+                 <div class="footer__social">
+               <a href="https://harmony.nfsb.qc.ca/" target="_blank" class="footer__social-link">
+                  <i class="ri-global-line"></i>
+               </a>
+                 </div>
+               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="footer__copy">
+        &#169; All Rights Reserved By Williams A.
+        </span>
+    </footer>
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+    </a>
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="./assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+      <script src="assets/js/suggestions.js"></script>
+
+     <script src="assets/js/script.js"></script>
+    </main>
+  </body>
+</html>
