@@ -114,7 +114,7 @@ const sr = ScrollReveal({
  // reset: true repeat animations
 })
 
-sr.reveal(`.home__data, .section__title,.featured__container, .new__container, .about__text, .footer`)
+sr.reveal(`.home__data, .featured__container, .new__container, .about__text, .footer`)
 sr.reveal(`.home__images`, {delay: 600})
 sr.reveal(`.about__img`, { origin: "left" });
 sr.reveal(`.about__img-2`, { origin: "right" });
