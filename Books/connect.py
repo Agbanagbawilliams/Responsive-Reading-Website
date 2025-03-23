@@ -39,25 +39,7 @@ def book_details(book_id):
 
     if book:
         title, author, image, description, url, html_content = book
-
-        html = f"""
-        <html>
-            <head>
-                <title>{title}</title>
-                <link rel="stylesheet" href="/assets/style.css">
-            </head>
-            <body>
-                <h1>{title}</h1>
-                <p><strong>Author:</strong> {author}</p>
-                <img src="/assets/img/{image}" alt="{title}" style="width:200px;height:auto;"><br>
-                <p>{description}</p>
-                <a href="{url}" target="_blank">Read More</a><br>
-                <p>{html_content}</p>
-                <br><a href="/">Back to library</a>
-            </body>
-        </html>
-        """
-        return html
+        return html_content
     return "Book not found", 404
 
 # Route to serve preview files directly (no folder)
