@@ -33,31 +33,13 @@ def serve_index():
 def book_details(book_id):
     conn = sqlite3.connect('database/library.db')
     cursor = conn.cursor()
-    cursor.execute("SELECT title, author, image, description, url, preview_file FROM Books WHERE id = ?", (book_id,))
+    cursor.execute("SELECT title, author, cover_image, description, url, html_content FROM Books WHERE id = ?", (book_id,))
     book = cursor.fetchone()
     conn.close()
 
     if book:
-        title, author, image, description, url, preview_file = book
-
-        html = f"""
-        <html>
-            <head>
-                <title>{title}</title>
-                <link rel="stylesheet" href="/assets/style.css">
-            </head>
-            <body>
-                <h1>{title}</h1>
-                <p><strong>Author:</strong> {author}</p>
-                <img src="/assets/{image}" alt="{title}" style="width:200px;height:auto;"><br>
-                <p>{description}</p>
-                <a href="{url}" target="_blank">Read More</a><br>
-                <a href="/{preview_file}" target="_blank">Preview</a> <!-- FIXED HERE -->
-                <br><a href="/">Back to library</a>
-            </body>
-        </html>
-        """
-        return html
+        title, author, image, description, url, html_content = book
+        return html_content
     return "Book not found", 404
 
 # Route to serve preview files directly (no folder)
