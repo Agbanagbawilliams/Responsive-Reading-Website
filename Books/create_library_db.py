@@ -107,7 +107,7 @@ books = [
      "Story about a cat named Pete getting a goldfish",
      "https://pubhtml5.com/hcsy/xrqg/PETE_THE_CAT_A_Pet_For_Pete/",
      insert_file_data('previeux18.html')),
-    ("The Good Egg", "Pete Oswald", 'download (17).jpg' ,
+    ("The Good Egg", "Pete Oswald", 'download (17).jpg',
      "Story about a good and nice egg",
      "https://fliphtml5.com/eairu/cnld/707429470-The-Good-Egg/",
      insert_file_data('previeux19.html')),
