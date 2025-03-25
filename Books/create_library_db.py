@@ -81,7 +81,7 @@ books = [
     ("Stink and the Incredible Shrinking Kid", "Megan McDonald", 'download (10).jpg' ,
      "The story of Stink who shrinks to the size of a doll and faces an adventure.",
      "https://online.flipbuilder.com/xyz123/abc456/", insert_file_data('previeux11.html')),
-    ("Dog Man Unleashed", "Dav Pilkey", 'download.jpg',
+    ("Dog Man Unleashed", "Dav Pilkey", 'download.jpg' ,
      "The second book in the 'Dog Man' series, filled with more fun and adventure.",
      "https://online.flipbuilder.com/abc123/xyz456/", insert_file_data('previeux12.html')),
     ("Smile", "Ralna Telgemelery", 'download (11).jpg' ,
