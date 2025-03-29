@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "connect.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/.*", "dest": "connect.py" }
+  ]
+}
