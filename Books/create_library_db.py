@@ -127,13 +127,15 @@ except sqlite3.Error as e:
 # Insert HTML, CSS, and JS files into `structure`
 structure_files = [
     ('index.html', 'html', insert_file_data('index.html')),
+    ('assets/js/offline.html', 'html', insert_file_data('assets/js/offline.html')),
     ('assets/css/styles.css', 'css', insert_file_data('assets/css/styles.css')),
     ('assets/css/swiper-bundle.min.css', 'css', insert_file_data('assets/css/swiper-bundle.min.css')),
     ('assets/js/main.js', 'js', insert_file_data('assets/js/main.js')),
     ('assets/js/script.js', 'js', insert_file_data('assets/js/script.js')),
     ('assets/js/swiper-bundle.min.js', 'js', insert_file_data('assets/js/swiper-bundle.min.js')),
     ('assets/js/scrollreveal.min.js', 'js', insert_file_data('assets/js/scrollreveal.min.js')),
-    ('assets/js/suggestions.js', 'js', insert_file_data('assets/js/suggestions.js'))
+    ('assets/js/suggestions.js', 'js', insert_file_data('assets/js/suggestions.js')),
+    ('assets/js/sw.js', 'js', insert_file_data('assets/js/sw.js')),
 ]
 
 # Insert images into `structure`

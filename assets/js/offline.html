@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're Offline</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .speech-bubble {
+      display: none;
+      position: absolute;
+      top: -140px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 16px 22px;
+      font-size: 16px;
+      color: #333;
+      max-width: 85vw;
+      text-align: center;
+      word-wrap: break-word;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      animation: fallIn 0.6s ease-out;
+      z-index: 10;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      margin-left: -10px;
+      border: 10px solid transparent;
+      border-top-color: white;
+    }
+
+    @keyframes fallIn {
+      0% {
+        transform: translateY(-200px) scale(0.8) rotate(-5deg);
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(10px) scale(1.05);
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(-4px) scale(0.98);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .container img {
+      width: 350px;
+      height: auto;
+      animation: shake 0.5s ease-in-out infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(5px, 0); }
+      50% { transform: translate(-5px, 0); }
+      75% { transform: translate(5px, 0); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .message {
+      font-size: 26px;
+      font-weight: bold;
+      color: #444;
+      margin-top: 20px;
+    }
+
+    .description {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #777;
+    }
+
+    .reload-button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .reload-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="speech-bubble" id="status-message">Still offline. Please reconnect.</div>
+    <img src="/assets/img/no-internet.gif" alt="No Internet">
+    <div class="message">Oops! You're Offline!</div>
+    <div class="description">Please check your internet connection and try again.</div>
+    <a href="#" class="reload-button" onclick="checkConnection(event)">Try Again</a>
+  </div>
+
+  <script>
+    const redirectURL = "/"; // Go back to homepage
+
+    function checkConnection(event) {
+      event.preventDefault();
+      const status = document.getElementById('status-message');
+
+      if (navigator.onLine) {
+        status.innerText = "You're back online! Redirecting...";
+        showBubble(status);
+        setTimeout(() => {
+          window.location.href = redirectURL;
+        }, 1500);
+      } else {
+        status.innerText = "Still offline. Please reconnect.";
+        showBubble(status);
+      }
+    }
+
+    function showBubble(bubble) {
+      bubble.style.display = 'block';
+      bubble.style.animation = 'none';
+      void bubble.offsetWidth;
+      bubble.style.animation = 'fallIn 0.6s ease-out';
+    }
+
+    // Auto-redirect when internet comes back
+    window.addEventListener('online', () => {
+      const status = document.getElementById('status-message');
+      status.innerText = "You're back online! Redirecting...";
+      showBubble(status);
+      setTimeout(() => {
+        window.location.href = redirectURL;
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

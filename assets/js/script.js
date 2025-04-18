@@ -62,3 +62,9 @@ function showSuggestions(list) {
 document.addEventListener("DOMContentLoaded", function () {
     fetchBooks();
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(() => {
+    console.log('SW registered');
+  });
+}
