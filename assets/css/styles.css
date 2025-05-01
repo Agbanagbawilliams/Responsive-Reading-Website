@@ -303,6 +303,85 @@ img {
 .show-search {
   top: 0;
 }
+/*====== Language Switcher =====*/
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: var(--body-font, Arial);
+  font-size: var(--normal-font-size, 16px);
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  color: var(--title-color, #333);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+}
+
+.dropdown-btn .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn.open .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: var(--container-color, #fff);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  display: none;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li {
+  opacity: 0;
+  transform: translateY(-10px);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  animation: dropIn 0.4s forwards;
+  animation-delay: calc(var(--i) * 100ms);
+}
+
+.dropdown-menu.show li {
+  /* Restart the animation when menu is shown */
+  animation: dropIn 0.4s forwards;
+  animation-delay: calc(var(--i) * 100ms);
+}
+
+@keyframes dropIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu li:hover {
+  background-color: var(--body-color, #f9f9f9);
+}
 /*============== HOME ===============*/
 .home__swiper{
   margin: initial;

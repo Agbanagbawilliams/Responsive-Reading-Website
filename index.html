@@ -61,6 +61,17 @@
         <!-- Search Button -->
         <i class="ri-search-line" id="search-button"></i>
       </div>
+    <!-- Language Switcher -->
+      <div class="language-dropdown">
+        <button onclick="toggleLanguageMenu()" class="dropdown-btn" id="languageButton">
+          🌐 Language
+          <span class="arrow" id="dropdownArrow">&#9662;</span>
+        </button>
+        <ul class="dropdown-menu" id="languageMenu">
+          <li style="--i:0" onclick="switchLanguage('en')">English</li>
+          <li style="--i:1" onclick="switchLanguage('fr')">Français</li>
+        </ul>
+      </div>
     </nav>
   </header>
   <!--==================== SEARCH ====================-->
