@@ -2,7 +2,6 @@ import sqlite3
 import os
 
 
-# Function to read file data (text for HTML/CSS/JS, binary for images)
 def insert_file_data(file_path, is_binary=False):
     full_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', file_path))
 
@@ -32,7 +31,6 @@ CREATE TABLE IF NOT EXISTS books (
 )
 ''')
 
-# Create `structure` table for HTML, CSS, JS files
 cursor.execute("DROP TABLE IF EXISTS structure")
 cursor.execute('''
 CREATE TABLE structure (
@@ -43,7 +41,6 @@ CREATE TABLE structure (
 )
 ''')
 
-# Books list (including new books)
 books = [
     ("The Tale of Peter Rabbit", "Beatrix Potter", '14838-cover.png', 
      "A children's classic about Peter Rabbit.", "https://online.flipbuilder.com/rias/kedp/",
@@ -113,7 +110,6 @@ books = [
      insert_file_data('previeux19.html')),
 ]
 
-# Insert books
 try:
     cursor.executemany('''
     INSERT INTO books (title, author, cover_image, description, url, html_content)
@@ -138,21 +134,18 @@ structure_files = [
     ('assets/js/sw.js', 'js', insert_file_data('assets/js/sw.js')),
 ]
 
-# Insert images into `structure`
 image_folder = 'assets/img/'
 for filename in os.listdir(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', image_folder))):
     file_path = os.path.join(image_folder, filename)
     structure_files.append((file_path, 'image', insert_file_data(file_path, True)))
 
-# Insert files into `structure` table
 for file in structure_files:
-    if file[2]:  # Ensure file content is not None
+    if file[2]:
         cursor.execute('''
             INSERT INTO structure (filename, file_type, file_content)
             VALUES (?, ?, ?)
         ''', file)
 
-# Commit and close connection
 conn.commit()
 conn.close()
 print("Database updated successfully with all HTML, CSS, JS, and images in the structure table!")
