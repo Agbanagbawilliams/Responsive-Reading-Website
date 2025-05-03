@@ -14,7 +14,7 @@ def get_file_from_db(filename):
     if result:
         file_content, file_type = result
         if file_type == 'image':
-            return Response(file_content, mimetype='image/gif')  # Adjust if jpeg/png
+            return Response(file_content, mimetype='image/gif')
         elif file_type == 'css':
             return Response(file_content, mimetype='text/css')
         elif file_type == 'js':
@@ -28,7 +28,6 @@ def get_file_from_db(filename):
 def serve_index():
     return get_file_from_db("index.html")
 
-# Book preview
 @app.route('/book/<int:book_id>')
 def book_details(book_id):
     conn = sqlite3.connect('database/library.db')
