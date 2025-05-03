@@ -382,6 +382,22 @@ img {
 .dropdown-menu li:hover {
   background-color: var(--body-color, #f9f9f9);
 }
+
+/* Hide Google Translate toolbar and banner */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-icon,
+.goog-logo-link,
+.goog-te-gadget-simple,
+.goog-te-menu-value span,
+#goog-gt-tt,
+body > .skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
 /*============== HOME ===============*/
 .home__swiper{
   margin: initial;

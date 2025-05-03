@@ -139,77 +139,37 @@ sr.reveal(`.about__img-2`, { origin: "right" });
             })
             .catch(error => console.error('Error fetching books:', error));
 /*======================== LANG DROPDOWN MENU ====================*/
-// API URL for LibreTranslate (self-hosted or the public instance)
-const API_URL = 'https://libretranslate.com/translate';
-
-// Function to toggle language dropdown menu visibility
 function toggleLanguageMenu() {
   const menu = document.getElementById("languageMenu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
+  const button = document.getElementById("languageButton");
+  menu.classList.toggle("show");
+  button.classList.toggle("open");
 }
 
-// Function to switch language and translate page content
 function switchLanguage(lang) {
-  alert("Language switched to: " + lang);
-
-  // Collect all text nodes that need translation
-  const elements = document.body.getElementsByTagName('*');
-  let textNodes = [];
-  for (let i = 0; i < elements.length; i++) {
-    if (elements[i].childNodes.length) {
-      for (let j = 0; j < elements[i].childNodes.length; j++) {
-        if (elements[i].childNodes[j].nodeType === 3) {
-          textNodes.push(elements[i].childNodes[j]);
-        }
-      }
-    }
+  const select = document.querySelector(".goog-te-combo");
+  if (select) {
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+  } else {
+    alert("Translator not ready yet. Please wait a moment and try again.");
   }
 
-  // Prepare the texts to translate
-  const textsToTranslate = textNodes.map(node => node.textContent);
-
-  // Construct the request body for LibreTranslate
-  const requestBody = {
-    q: textsToTranslate.join('\n'),
-    source: 'en',
-    target: lang
-  };
-
-  // Send the translation request to LibreTranslate
-  fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(requestBody)
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.error) {
-        throw new Error('API Error: ' + data.error);
-      }
-
-      // Update the page content with translated text
-      let counter = 0;
-      textNodes.forEach(node => {
-        if (data.translations[counter]) {
-          node.textContent = data.translations[counter].translatedText;
-          counter++;
-        }
-      });
-    })
-    .catch(error => {
-      console.error('Error translating content:', error);
-      alert("Translation failed. Please try again later.");
-    });
-
-  // Close the language menu after selection
-  document.getElementById("languageMenu").style.display = "none";
+  document.getElementById("languageMenu").classList.remove("show");
+  document.getElementById("languageButton").classList.remove("open");
 }
 
-// Close the menu if clicked outside
 window.addEventListener("click", function (e) {
   if (!e.target.closest(".language-dropdown")) {
-    document.getElementById("languageMenu").style.display = "none";
+    document.getElementById("languageMenu").classList.remove("show");
+    document.getElementById("languageButton").classList.remove("open");
   }
 });
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,fr',
+    autoDisplay: false
+  }, 'google_translate_element');
+}

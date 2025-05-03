@@ -61,7 +61,7 @@
         <!-- Search Button -->
         <i class="ri-search-line" id="search-button"></i>
       </div>
-    <!-- Language Switcher -->
+      <!-- Language Switcher Dropdown -->
       <div class="language-dropdown">
         <button onclick="toggleLanguageMenu()" class="dropdown-btn" id="languageButton">
           🌐 Language
@@ -72,6 +72,12 @@
           <li style="--i:1" onclick="switchLanguage('fr')">Français</li>
         </ul>
       </div>
+
+      <!-- Hidden container for Google Translate -->
+      <div style="display: none;">
+        <div id="google_translate_element"></div>
+      </div>
+      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </nav>
   </header>
   <!--==================== SEARCH ====================-->
