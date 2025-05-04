@@ -2,86 +2,198 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charlotte's Web</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The One and Only Ivan</title>
     <link rel="shortcut icon" href="/assets/img/bookshelf_3283747.png" type="image/x-icon" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #ebeeff;
-        }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    <!-- Embedded CSS -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ebeeff;
+    top: 0px !important;
+  }
 
-        .book-cover {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 
-        .book-cover img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+  .book-cover {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-        .book-title {
-            font-size: 24px;
-            color: #333;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+  .book-cover img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
 
-        .book-author {
-            font-size: 18px;
-            color: #555;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+  .book-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-        .book-details {
-            margin-bottom: 20px;
-        }
+  .book-author {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-        .book-details h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
+  .book-details {
+    margin-bottom: 20px;
+  }
 
-        .book-actions {
-            text-align: center;
-        }
+  .book-details h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #007BFF;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 5px;
-        }
+  .book-actions {
+    text-align: center;
+  }
 
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  .language-dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: var(--body-font, Arial);
+    font-size: var(--normal-font-size, 16px);
+  }
+
+  .dropdown-btn {
+    background-color: transparent;
+    color: var(--title-color, #333);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+  }
+
+  .dropdown-btn .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown-btn.open .arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--container-color, #fff);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    display: none;
+    min-width: 180px;
+    z-index: 999;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    opacity: 0;
+    transform: translateY(-10px);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    animation: dropIn 0.4s forwards;
+    animation-delay: calc(var(--i) * 100ms);
+  }
+
+  .dropdown-menu.show li {
+    animation: dropIn 0.4s forwards;
+    animation-delay: calc(var(--i) * 100ms);
+  }
+
+  @keyframes dropIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dropdown-menu li:hover {
+    background-color: var(--body-color, #f9f9f9);
+  }
+
+  /* Hide Google Translate toolbar and banner */
+  .goog-te-banner-frame.skiptranslate,
+  .goog-te-gadget-icon,
+  .goog-logo-link,
+  .goog-te-gadget-simple,
+  .goog-te-menu-value span,
+  #goog-gt-tt,
+  body > .skiptranslate {
+    display: none !important;
+  }
+</style>
+
 </head>
 
 <body>
+    <!-- Language Switcher Dropdown -->
+    <div class="language-dropdown">
+        <button onclick="toggleLanguageMenu()" class="dropdown-btn" id="languageButton">
+            🌐 Language
+            <span class="arrow" id="dropdownArrow">&#9662;</span>
+        </button>
+        <ul class="dropdown-menu" id="languageMenu">
+            <li style="--i:0" onclick="switchLanguage('en')">English</li>
+            <li style="--i:1" onclick="switchLanguage('fr')">Français</li>
+        </ul>
+    </div>
+
+    <!-- Hidden Google Translate Container -->
+    <div style="display: none;">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <!-- Book Content -->
     <div class="container">
         <div class="book-cover">
-            <img src="/assets/img/download (6).jpg" alt="Book Cover">
+           <img src="/assets/img/download (6).jpg" alt="Book Cover">
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         </div>
         <div class="book-title">Charlotte's Web</div>
         <div class="book-author">by E.B. White</div>
@@ -91,14 +203,53 @@
                 When he is in danger of being slaughtered, Charlotte writes messages in her web praising Wilbur, such as
                 "Some Pig", "Terrific", "Radiant", and "Humble", to persuade the farmer, Homer Zuckerman, to let him
                 live.
+</p>
 
-            </p>
         </div>
+
         <div class="book-actions">
             <a href="https://online.flipbuilder.com/fdyv/pplb/" target="_blank" class="btn">Read Now</a>
             <a href="/" class="btn">Go Back</a>
         </div>
     </div>
+
+    <!-- Embedded JS -->
+    <script>
+        function toggleLanguageMenu() {
+            const menu = document.getElementById("languageMenu");
+            const button = document.getElementById("languageButton");
+            menu.classList.toggle("show");
+            button.classList.toggle("open");
+        }
+
+        function switchLanguage(lang) {
+            const select = document.querySelector(".goog-te-combo");
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event("change"));
+            } else {
+                alert("Translator not ready yet. Please wait a moment and try again.");
+            }
+
+            document.getElementById("languageMenu").classList.remove("show");
+            document.getElementById("languageButton").classList.remove("open");
+        }
+
+        window.addEventListener("click", function (e) {
+            if (!e.target.closest(".language-dropdown")) {
+                document.getElementById("languageMenu").classList.remove("show");
+                document.getElementById("languageButton").classList.remove("open");
+            }
+        });
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
 </body>
 
 </html>
