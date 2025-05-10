@@ -379,6 +379,11 @@ img {
   }
 }
 
+.goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+}
+
 .dropdown-menu li:hover {
   background-color: var(--body-color, #f9f9f9);
 }
