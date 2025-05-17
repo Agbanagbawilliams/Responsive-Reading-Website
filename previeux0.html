@@ -216,7 +216,7 @@
       <a id="readNowBtn"
          href="#"
          data-en="https://online.flipbuilder.com/fdyv/fopf/"
-         data-fr="https://reader.numilog.com/reader?ISBN=9791023502886&storeId=76&referer=https%3a%2f%2fnumerique.lalibrairie.com%2f415477%2fLe-Seul-et-unique-Ivan.ebook%3futm_source%3dchatgpt.com#epubcfi(/6/2[html-cover-page]!/4/1:0)"
+         data-fr="https://online.flipbuilder.com/fdyv/fopf_fr/"
          target="_blank"
          class="btn">Read Now</a>
       <a href="/" class="btn">Go Back</a>
@@ -227,60 +227,73 @@
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <!-- JS Scripts -->
-  <script>
-    function toggleLanguageMenu() {
-      const menu = document.getElementById("languageMenu");
-      const button = document.getElementById("languageButton");
-      menu.classList.toggle("show");
-      button.classList.toggle("open");
+<script>
+  function toggleLanguageMenu() {
+    const menu = document.getElementById("languageMenu");
+    const button = document.getElementById("languageButton");
+    menu.classList.toggle("show");
+    button.classList.toggle("open");
+  }
+
+  function switchLanguage(lang) {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+
+      // Wait for translation to apply
+      waitForTranslation(lang);
+    } else {
+      alert("Translator not ready yet. Please wait a moment and try again.");
+    }
+    document.getElementById("languageMenu").classList.remove("show");
+    document.getElementById("languageButton").classList.remove("open");
+  }
+
+  function waitForTranslation(lang) {
+    const interval = setInterval(() => {
+      const cookie = document.cookie;
+      if (
+        cookie.includes(`googtrans=/en/${lang}`) ||
+        cookie.includes(`googtrans=/auto/${lang}`) ||
+        (lang === 'en' && cookie.includes(`googtrans=/fr/en`))
+      ) {
+        setReadNowLinkByLanguage();
+        clearInterval(interval);
+      }
+    }, 300);
+    setTimeout(() => clearInterval(interval), 5000); // Stop after 5s max
+  }
+
+  function setReadNowLinkByLanguage() {
+    const readBtn = document.getElementById("readNowBtn");
+    if (!readBtn) return;
+
+    let currentLang = 'en';
+    const cookie = document.cookie;
+    if (cookie.includes('googtrans=/en/fr') || cookie.includes('googtrans=/auto/fr')) {
+      currentLang = 'fr';
     }
 
-    function switchLanguage(lang) {
-      const select = document.querySelector(".goog-te-combo");
-      if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event("change"));
-      } else {
-        alert("Translator not ready yet. Please wait a moment and try again.");
-      }
-      document.getElementById("languageMenu").classList.remove("show");
-      document.getElementById("languageButton").classList.remove("open");
+    const targetUrl = readBtn.getAttribute(`data-${currentLang}`);
+    if (targetUrl) {
+      readBtn.setAttribute("href", targetUrl);
     }
+  }
 
-    window.addEventListener("click", function (e) {
-      if (!e.target.closest(".language-dropdown")) {
-        document.getElementById("languageMenu").classList.remove("show");
-        document.getElementById("languageButton").classList.remove("open");
-      }
-    });
+  window.addEventListener('load', function () {
+    setReadNowLinkByLanguage();
+  });
 
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,fr',
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,fr',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
 
-    function setReadNowLinkByLanguage() {
-      const readBtn = document.getElementById("readNowBtn");
-      if (!readBtn) return;
-
-      let currentLang = 'en';
-      if (document.cookie.includes('googtrans=/en/fr') || document.cookie.includes('googtrans=/auto/fr')) {
-        currentLang = 'fr';
-      }
-
-      const targetUrl = readBtn.getAttribute(`data-${currentLang}`);
-      if (targetUrl) {
-        readBtn.setAttribute("href", targetUrl);
-      }
-    }
-
-    window.addEventListener('load', function () {
-      setTimeout(setReadNowLinkByLanguage, 500);
-    });
-  </script>
 </body>
 
 </html>
