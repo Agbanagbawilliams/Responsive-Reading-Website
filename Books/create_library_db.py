@@ -42,10 +42,10 @@ CREATE TABLE structure (
 ''')
 
 books = [
-    ("The Tale of Peter Rabbit", "Beatrix Potter", '14838-cover.png', 
+    ("The Tale of Peter Rabbit", "Beatrix Potter", '14838-cover.png',
      "A children's classic about Peter Rabbit.", "https://online.flipbuilder.com/rias/kedp/",
      insert_file_data('previeux2.html')),
-    ("Dog Man", "Dav Pilkey", '51KYLRbfmGL._SY445_SX342_.jpg', 
+    ("Dog Man", "Dav Pilkey", '51KYLRbfmGL._SY445_SX342_.jpg',
      "A graphic novel about a dog who is a superhero.", "https://pubhtml5.com/krqt/bizq/The_One_and_Only_Ivan_-_Katherine_Applegate/",
      insert_file_data('previeux3.html')),
     ("The One and Only Ivan", "K. A. Applegate", '1.avif',

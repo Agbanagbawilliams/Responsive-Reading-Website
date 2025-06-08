@@ -208,48 +208,60 @@
         </div>
 
         <div class="book-actions">
-            <a href="https://online.flipbuilder.com/fdyv/joww/" target="_blank" class="btn">Read Now</a>
+            <a id="readNowBtn" href="https://online.pubhtml5.com/pien/nymk/#p=1" target="_blank" class="btn">Read Now</a>
             <a href="/" class="btn">Go Back</a>
         </div>
     </div>
 
     <!-- Embedded JS -->
-    <script>
-        function toggleLanguageMenu() {
-            const menu = document.getElementById("languageMenu");
-            const button = document.getElementById("languageButton");
-            menu.classList.toggle("show");
-            button.classList.toggle("open");
+ <script>
+    function toggleLanguageMenu() {
+        const menu = document.getElementById("languageMenu");
+        const button = document.getElementById("languageButton");
+        menu.classList.toggle("show");
+        button.classList.toggle("open");
+    }
+
+    function switchLanguage(lang) {
+        const select = document.querySelector(".goog-te-combo");
+
+        // Change book link based on language
+        const readNowBtn = document.getElementById("readNowBtn");
+
+        if (lang === 'en') {
+            readNowBtn.href = "https://online.pubhtml5.com/pien/nymk/#p=1";
+        } else if (lang === 'fr') {
+            readNowBtn.href = "https://fliphtml5.com/ewobj/cmll/";
         }
 
-        function switchLanguage(lang) {
-            const select = document.querySelector(".goog-te-combo");
-            if (select) {
-                select.value = lang;
-                select.dispatchEvent(new Event("change"));
-            } else {
-                alert("Translator not ready yet. Please wait a moment and try again.");
-            }
+        // Google Translate switch
+        if (select) {
+            select.value = lang;
+            select.dispatchEvent(new Event("change"));
+        } else {
+            alert("Translator not ready yet. Please wait a moment and try again.");
+        }
 
+        document.getElementById("languageMenu").classList.remove("show");
+        document.getElementById("languageButton").classList.remove("open");
+    }
+
+    window.addEventListener("click", function (e) {
+        if (!e.target.closest(".language-dropdown")) {
             document.getElementById("languageMenu").classList.remove("show");
             document.getElementById("languageButton").classList.remove("open");
         }
+    });
 
-        window.addEventListener("click", function (e) {
-            if (!e.target.closest(".language-dropdown")) {
-                document.getElementById("languageMenu").classList.remove("show");
-                document.getElementById("languageButton").classList.remove("open");
-            }
-        });
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr',
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+</script>
 
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,fr',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
 </body>
 
 </html>
