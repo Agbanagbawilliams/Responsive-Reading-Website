@@ -172,22 +172,6 @@
 </head>
 
 <body>
-    <!-- Language Switcher Dropdown -->
-    <div class="language-dropdown">
-        <button onclick="toggleLanguageMenu()" class="dropdown-btn" id="languageButton">
-            🌐 Language
-            <span class="arrow" id="dropdownArrow">&#9662;</span>
-        </button>
-        <ul class="dropdown-menu" id="languageMenu">
-            <li style="--i:0" onclick="switchLanguage('en')">English</li>
-            <li style="--i:1" onclick="switchLanguage('fr')">Français</li>
-        </ul>
-    </div>
-
-    <!-- Hidden Google Translate Container -->
-    <div style="display: none;">
-        <div id="google_translate_element"></div>
-    </div>
 
     <!-- Book Content -->
     <div class="container">
@@ -218,51 +202,12 @@
 
         <div class="book-actions">
           <a id="readNowBtn"
-             href="#"
-             data-en="https://online.flipbuilder.com/rias/kedp/"
+             href="https://online.flipbuilder.com/rias/kedp/"
              target="_blank"
              class="btn">Read Now</a>
           <a href="/" class="btn">Go Back</a>
         </div>
     </div>
-
-    <!-- Embedded JS -->
-    <script>
-        function toggleLanguageMenu() {
-            const menu = document.getElementById("languageMenu");
-            const button = document.getElementById("languageButton");
-            menu.classList.toggle("show");
-            button.classList.toggle("open");
-        }
-
-        function switchLanguage(lang) {
-            const select = document.querySelector(".goog-te-combo");
-            if (select) {
-                select.value = lang;
-                select.dispatchEvent(new Event("change"));
-            } else {
-                alert("Translator not ready yet. Please wait a moment and try again.");
-            }
-
-            document.getElementById("languageMenu").classList.remove("show");
-            document.getElementById("languageButton").classList.remove("open");
-        }
-
-        window.addEventListener("click", function (e) {
-            if (!e.target.closest(".language-dropdown")) {
-                document.getElementById("languageMenu").classList.remove("show");
-                document.getElementById("languageButton").classList.remove("open");
-            }
-        });
-
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,fr',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
 </body>
 
 </html>
